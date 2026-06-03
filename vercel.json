@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "functions": {
+    "api/og.js": { "runtime": "edge" }
+  }
+}
