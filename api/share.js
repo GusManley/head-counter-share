@@ -49,6 +49,7 @@ export default function handler(req, res) {
     .btn{display:block;background:#38c5b2;color:white;text-decoration:none;
          padding:14px;border-radius:12px;font-weight:600;font-size:16px;margin-bottom:10px}
     .sub{font-size:12px;color:#8e8e93}
+    
   </style>
 </head>
 <body>
@@ -61,7 +62,8 @@ export default function handler(req, res) {
     </div>
     <div class="ftr">
       <a class="btn" href="${deepLink}">Open in Head Counter</a>
-      <p class="sub">Requires Head Counter installed on your device</p>
+      <p class="sub">Requires Head Counter installed on your device </p>
+      <p class="sub" id="status-msg">Requires Head Counter installed on your device</p>
     </div>
   </div>
   <script>
