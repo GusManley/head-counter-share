@@ -17,7 +17,7 @@ export default function handler(req, res) {
         } catch {}
     }
 
-    const title    = `Head Counter — ${total} people`
+    const title = `Headcounter — ${total} people`
     const desc     = [dateStr, areas].filter(Boolean).join(' · ')
     const deepLink = `headcount://import?data=${encodeURIComponent(data ?? '')}`
     const imgUrl   = `https://${req.headers.host}/api/og?total=${total}&date=${encodeURIComponent(dateStr)}`
