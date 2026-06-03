@@ -64,6 +64,19 @@ export default function handler(req, res) {
       <p class="sub">Requires Head Counter installed on your device</p>
     </div>
   </div>
+  <script>
+  // Try opening the app immediately. If installed, iOS switches to it.
+  // If not, the page stays visible (Safari can't open unknown schemes).
+  var deepLink = '${deepLink}';
+  var start = Date.now();
+  window.location.replace(deepLink);
+  
+  // After 1.5s, if we're still here the app isn't installed — show a hint
+  setTimeout(function() {
+    var msg = document.getElementById('status-msg');
+    if (msg) msg.textContent = 'Head Counter doesn\\'t appear to be installed on this device.';
+  }, 1500);
+</script>
 </body>
 </html>`)
 }
