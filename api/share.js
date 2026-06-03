@@ -4,7 +4,8 @@ export default function handler(req, res) {
 
     if (data) {
         try {
-            const xml = Buffer.from(data, 'base64').toString('utf8')
+            const b64 = data.replace(/-/g, '+').replace(/_/g, '/')
+            const xml = Buffer.from(b64, 'base64').toString('utf8')
             const t = xml.match(/total="(\d+)"/)
             const d = xml.match(/date="([^"]+)"/)
             const a = [...xml.matchAll(/<area /g)]
